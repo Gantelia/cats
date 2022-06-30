@@ -131,5 +131,4 @@ const Checkbox = styled.input`
     height: 10px;
 `
 
-
 export default CatButtons

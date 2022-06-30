@@ -1,31 +1,19 @@
 import styled from 'styled-components'
 
-type ImageContainerProps = {
-    image: string
-}
-
 type CatImageProps = {
     image: string
 }
 
 function CatImage({ image }: CatImageProps): JSX.Element {
-    return <ImageContainer image={image} />
+    return <Image src={image} alt="A cat." />
 }
 
-const ImageContainer = styled.div.attrs<ImageContainerProps>(({ image }) => ({
-    style: {
-        backgroundImage: `url(${image})`,
-    },
-}))<ImageContainerProps>`
+const Image = styled.img`
     width: 270px;
     height: 235px;
     margin-top: 25px;
     margin-left: 2px;
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position-x: center;
-    background-position-y: center;
+    object-fit: contain;
 `
-
 
 export default CatImage
